@@ -6,6 +6,7 @@ var userClickedPattern = [];
 
 var started = false;
 var level = 0;
+var bestScore = 0;
 
 $(document).keypress(function() {
   if (!started) {
@@ -30,6 +31,10 @@ function checkAnswer(currentLevel) {
 
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       if (userClickedPattern.length === gamePattern.length){
+        if (bestScore < level) {
+            bestScore = level;
+            $("#best-score span").text(bestScore);
+        }
         setTimeout(function () {
           nextSequence();
         }, 1000);
