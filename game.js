@@ -22,8 +22,9 @@ $(".btn").click(function() {
 
   playSound(userChosenColour);
   animatePress(userChosenColour);
-
-  checkAnswer(userClickedPattern.length-1);
+  if(started) {
+    checkAnswer(userClickedPattern.length-1);
+  }
 });
 
 function checkAnswer(currentLevel) {
