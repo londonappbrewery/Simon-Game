@@ -56,8 +56,14 @@ function nextSequence() {
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
 
-  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-  playSound(randomChosenColour);
+  for (var i = 0; i < gamePattern.length; i++) {
+    (function(index) {
+      setTimeout(function() {
+        $("#" + gamePattern[index]).fadeOut(100).fadeIn(200);
+        playSound(gamePattern[index]);
+      }, 400 * index);
+    })(i);
+  }  
 }
 
 function animatePress(currentColor) {
