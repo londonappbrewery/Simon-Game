@@ -51,3 +51,27 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+body label {
+  color: yellow;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.click-start-btn {
+  display: inline;
+  width: 100px;
+  background-color: blue;
+  color: whitesmoke;
+  font-weight: bold;
+  border-radius: 12px ;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.click-start-btn:hover {  
+  border: 3px solid yellow;
+} 
+
+.display-none {
+  display: none;
+}
